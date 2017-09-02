@@ -1,6 +1,6 @@
 //rootpath server.js
 var mongoose = require('mongoose'),
-	userModel = require('../models/User');
+	userModel = require('../models/User'),
 	courseModel = require('../models/course');
 
 module.exports = function(config){
