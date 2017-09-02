@@ -39,11 +39,11 @@ angular.module('app').config(function($routeProvider, $locationProvider){
 		resolve:routeRoleChecks.user
 	})
 	.when('/courses',{
-		templateUrl: '/partials/courses/course-list',
+		templateUrl: '/partials/Courses/course-list',
 		controller: 'mvcourseListCtrl',
 	})
 	.when('/courses/:id',{
-		templateUrl: '/partials/courses/course-details',
+		templateUrl: '/partials/Courses/course-details',
 		controller: 'mvcourseDetailsCtrl',
 	})
 });
