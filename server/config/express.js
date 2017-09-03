@@ -5,7 +5,8 @@ var express = require('express'),
     bodyparser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
-    passport = require('passport');
+    passport = require('passport'),
+    MongoStore = require('connect-mongo')(session);
 
 module.exports = function(app, config){
 	//middleware function for stylus
@@ -29,7 +30,12 @@ module.exports = function(app, config){
 	app.use(bodyparser.json());
 
 	//passport session key , initalization, session
-	app.use(session({secret:'multi vision unicorns', resave:false, saveUninitialized:false}));
+	app.use(session({
+		secret:'multi vision unicorns',
+		resave:true,
+		saveUninitialized:true,
+		store: new MongoStore({url: config.db})
+	}));
 	app.use(passport.initialize());
 	app.use(passport.session());
 
