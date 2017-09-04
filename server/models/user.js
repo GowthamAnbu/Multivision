@@ -7,15 +7,15 @@ var mongoose = require('mongoose'),
 
 var Schema= mongoose.Schema;
 var userSchema = new Schema({
-	firstName: {type:String/*,required:'{PATH} is required'*/},
-	lastName: {type:String/*,required:'{PATH} is required'*/},
+	firstName: {type:String,required:'{PATH} is required'},
+	lastName: {type:String,required:'{PATH} is required'},
 	userName: {
-		type:String/*,
+		type:String,
 		required:'{PATH} is required',
-		unique:true*/
+		unique:true
 	},
-	salt: {type:String/*,required:'{PATH} is required'*/},
-	hashed_pwd: {type:String/*,required:'{PATH} is required'*/},
+	salt: {type:String,required:'{PATH} is required'},
+	hashed_pwd: {type:String,required:'{PATH} is required'},
 	roles: [String]
 });
 /*
